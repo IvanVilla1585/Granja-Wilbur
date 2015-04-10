@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content=" width=device-width, initial-scale=1, maximum-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css\Normalize.css">
+	<link rel="stylesheet" href="css\estilos.css">
+	<title>Granja Porcícola Wilbur</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+	<section class="container">
+		<header>
+			<h1>Porcicola Wilbur</h1>
+			<a href="#" class="icon-icon-menu position" id="menu"></a>
+			<div class="registro" id="conten_registro">
+				<div class="button_registro">Registrarse</div>
+			</div>
+			<div class="sponsors">
+				<figure>
+					<img src="images/Logo.jpg" alt="Granja Porcicola Wilbur">
+				</figure>
+				<a href="https://www.facebook.com/edward.monsalve.1422" class="icon-facebook2"></span>
+				<a href="http://twitter.com/EdwardMCas" class="icon-twitter2"></a>
+				<a href="https://www.linkedin.com/profile/view?id=366152387&trk=nav_responsive_tab_profile_pic" class="icon-linkedin"></a>
+			</div>
+		</header>
+		<div class="seccion margin-top">
+			<div class="redBackground">
+				<h2>¿ Quíenes Somos ?</h2>
+			</div>
+			<p>
+				Este proyecto se realiza con fines académicos, el objetivo es demostrar las competencias adquiridas a medida que se avanza en el proceso de formación para alcanzar el título de técnico profesional en programación de sistemas de información.
+				El contenido de este trabajo está fundamentado en la debida investigación de la crianza de porcinos, como también en la consulta y uso de las herramientas necesarias para su debido desarrollo.
+				Con este software daremos alcance a las necesidades del cliente granja porcícola Wilbur, permitiendo minimizar los procesos para la crianza de cerdos y maximizando la productividad de la granja.
+			</p>
+			<div class="button right">Ver Mas</div>
+		</div>
+		<div class="seccionProcess white">
+			<div class="redBackground">
+				<h2>Nuestros Procesos</h2>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta et molestiae iste, quis omnis voluptatem facere atque, aliquam voluptate natus inventore possimus commodi, impedit fuga sapiente consequuntur quo, sequi consequatur.</p>
+			<article class="process">
+				<figure class="image">
+					<img src="images/reproductor.jpg" alt="Crianza de lechones en la granja porcicola wilbur.">
+				</figure>
+				<p class="name">Control Reproductores</p>
+				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
+				<div class="button right">Ver Mas</div>
+			</article>
+			<article class="process">
+				<figure class="image">
+					<img src="images/reprodu.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+				</figure>
+				<p class="name">Control a los Partos</p>
+				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
+				<div class="button right">Ver Mas</div>
+			</article>
+			<article class="process">
+				<figure class="image">
+					<img src="images/jaulas.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+				</figure>
+				<p class="name">Etapas de Desarrollo</p>
+				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
+				<div class="button right">Ver Mas</div>
+			</article>
+		</div>
+		<div class="seccion contact">
+			<h1>Escribenos</h1>
+			<div class="input">
+				<span>Nombre</span>
+				<input type="text" placeholder="Nombre">
+			</div>
+			<div class="input">
+				<span>Email</span>
+				<input type="text" placeholder="Email">
+			</div>
+			<div class="input">
+				<textarea name="comentario" id="" cols="30" rows="5" placeholder="Dejanos tu comentario"></textarea>
+			</div>
+			<a href="#" class="button right contacto">Enviar</a> 
+		</div>
+		<div class="seccion">
+			<h1>Quíenes Somos?</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta et molestiae iste, quis omnis voluptatem facere atque, aliquam voluptate natus inventore possimus commodi, impedit fuga sapiente consequuntur quo, sequi consequatur.</p>
+			<div class="button right">Ver Mas...</div>
+		</div>
+	</section> 
+	<script type="text/javascript">
+		function mostrarRegistrar(){
+			$("#conten_registro").slideToggle();
+			return false;	
+		}
+
+		$("#menu").click(mostrarRegistrar);
+	</script> 
+</body>
+</html>
