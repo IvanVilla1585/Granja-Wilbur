@@ -63,7 +63,28 @@ body
 	width 100%
 	position relative
 	
-	
+.Entrada
+	padding .5em
+	display block
+	width 100%
+	background white
+	text-align center
+	font-size 1.5em
+	input
+		margin 1em .5em 0 0
+		width 300px
+		border-radius 15px
+		border 2px solid rojo2
+	label
+		margin 1em .5em 0 0
+	.button_procesos
+		color white
+		font-size 1em
+		margin 2em auto !important
+		margin-bottom 1em !important
+		
+#menu
+	display none 	
 .registro
 	display none
 	color white
@@ -161,7 +182,7 @@ h2
 .button_procesos
 	height 25px
 	width 90px
-	margin 0 3em 0 0
+	margin 0 auto
 	font-family Varela Round
 	text-align center
 	background rojo_pag
@@ -257,6 +278,10 @@ footer
 				color amarillo_pag
 	
 @media screen and (max-width:480px)
+	#menu 
+		display block
+	.Entrada
+		display none
 	.container
 		position relative
 		h1

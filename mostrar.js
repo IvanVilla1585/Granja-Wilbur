@@ -8,3 +8,6 @@ function mostrarRegistrar(){
 }
 
 $boton.click(mostrarRegistrar);
+
+
+
