@@ -5,8 +5,7 @@
 	<meta name="viewport" content=" width=device-width, initial-scale=1, maximum-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css\Normalize.css">
-	<link rel="stylesheet" href="css\estilos.css">
+	<link rel="stylesheet" href="css\style.css">  
 	<title>Granja Porcícola Wilbur</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
@@ -14,17 +13,24 @@
 	<section class="container">
 		<header>
 			<h1>Porcícola Wilbur</h1>
-			<a href="#" class="icon-icon-menu position big" id="menu"></a>
-			<div class="registro" id="conten_registro">
-				<div class="button_registro">Ingresar</div>
-			</div>
-			<form action="" class="Entrada">
-				<label>Usuario</label><input type="text">
-				<label>Contraseña</label><input type="password">
-				<div class="button_procesos">
-					OK
-				</div>
-			</form>
+			<div class="button_registro icon-icon-user position">Ingresar</div>
+			<a href="#modal1" class="icon-icon-user position" id="menu1" ></a>
+			<div id="modal1" class="modalmask">
+   			 	<div class="modalbox movedown">    <h2 class="title">
+   			 		Ingreso al Sistema</h2>
+        			<form action="">
+        				<div class="usuario">
+        					<p>Usuario</p><input type="text"> 
+        					<p>Contraseña<p>
+        					<input type="text">
+        				</div>
+        				<div class="buttons">
+        					<a href="#close" class="button_procesos salir">Volver</a>
+        					<a href="#" class="button_procesos ingresar">Ingresar</a>
+						</div> 	
+        			</form>
+    			</div>
+			</div> 
 			<div class="sponsors">
 				<figure>
 					<img src="images/Logo.jpg" alt="Granja Porcicola Wilbur">
@@ -32,6 +38,7 @@
 				<a href="https://www.facebook.com/edward.monsalve.1422" class="icon-facebook"></span>
 				<a href="http://twitter.com/EdwardMCas" class="icon-twitter"></a>
 				<a href="https://www.linkedin.com/profile/view?id=366152387&trk=nav_responsive_tab_profile_pic" class="icon-linkedin"></a>
+				<a href="https://www.youtube.com" class="icon-youtube3"></a>
 			</div>
 		</header>
 		<div class="seccion">
@@ -39,7 +46,7 @@
 				<h2>¿ Quiénes Somos ?</h2>
 			</div>
 			<p>
-				Somos una empresa joven  y fresca, con una vasta experiencia en la crianza de porcinos, donde nuestro principal patrimonio es el talento humano que ha hecho posible nuestro crecimiento y es por eso que tomamos la decisión de invertir en un software para la sistematización de datos, optimizando de esta manera la persistencia de los datos y obteniendo en tiempo real la información a consultar de todos nuestros productos. Adicional a esto se creo un portal web con el objetivo de que cada uno de nuestros profesionales pueda disponer de toda la información de la base de datos desde cualquier lugar que tenga acceso a internet. A su vez se creo un apartado especial para que nuestros clientes puedan visualizar todos nuestro productos de manera dinámica mediante fotografías.
+				Somos una empresa joven  y fresca, con una vasta experiencia en la crianza de porcinos, donde nuestro principal patrimonio es el talento humano que ha hecho posible nuestro crecimiento ...
 			</p>
 			<div class="button_procesos">Ver Más</div>
 		</div>
@@ -48,6 +55,30 @@
 				<h2>Nuestros Procesos</h2>
 			</div>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta et molestiae iste, quis omnis voluptatem facere atque, aliquam voluptate natus inventore possimus commodi, impedit fuga sapiente consequuntur quo, sequi consequatur.</p>
+			<article class="process">
+				<figure class="image">
+					<img src="images/reproductor.jpg" alt="Crianza de lechones en la granja porcicola wilbur.">
+				</figure>
+				<p class="name">Control Reproductores</p>
+				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
+				<div class="button_procesos">Ver Más</div>
+			</article>
+			<article class="process">
+				<figure class="image">
+					<img src="images/reprodu.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+				</figure>
+				<p class="name">Control a los Partos</p>
+				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
+				<div class="button_procesos">Ver Más</div>
+			</article>
+			<article class="process">
+				<figure class="image">
+					<img src="images/jaulas.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+				</figure>
+				<p class="name">Etapas de Desarrollo</p>
+				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
+				<div class="button_procesos">Ver Mas</div>
+			</article>
 			<article class="process">
 				<figure class="image">
 					<img src="images/reproductor.jpg" alt="Crianza de lechones en la granja porcicola wilbur.">
@@ -89,8 +120,7 @@
 				<textarea name="comentario" id="" cols="30" rows="5" placeholder="Dejanos tu comentario"></textarea>
 			</div>
 			<div href="#" class="button_procesos contacto padding">Enviar</div> 
-		</div>
-		
+		</div>		
 		<footer>
 			<p>Granja Porcícola Wilbur</p>
 			<p>siguenos en:</p>
@@ -98,16 +128,9 @@
 				<a href="https://www.facebook.com/edward.monsalve.1422" class="icon-facebook"></span>
 				<a href="http://twitter.com/EdwardMCas" class="icon-twitter"></a>
 				<a href="https://www.linkedin.com/profile/view?id=366152387&trk=nav_responsive_tab_profile_pic" class="icon-linkedin"></a>
+				<a href="https://www.youtube.com" class="icon-youtube3"></a>
 			</aside>
 		</footer> 
 	</section>
-	<script type="text/javascript">
-		function mostrarRegistrar(){
-			$("#conten_registro").slideToggle();
-			return false;	
-		}
-
-		$("#menu").click(mostrarRegistrar);
-	</script> 
 </body>
 </html>
