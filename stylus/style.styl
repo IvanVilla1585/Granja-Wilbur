@@ -43,8 +43,8 @@ h2
 
 //buttons
 .button_procesos
-    height 25px
-    width 90px
+    height 1.6em
+    width 7em
     margin 0 auto
     font-family Varela Round
     text-align center
@@ -56,9 +56,10 @@ h2
     border-width 0px 0px 5px
     padding-top 8px
     transition 1s 
-    &:hover
-        background amarillo_pag
-        width 80px
+    &:active
+        width 6.3em
+        height 1.3em
+        font-size 14px
 
 
 //OOCSS
@@ -80,6 +81,10 @@ h2
 .margin-top
     margin-top 2em !important
 
+
+.label
+    margin 0 
+
 .contacto
   color white
   text-decoration none
@@ -91,7 +96,7 @@ h2
     background-image url('../images/Fondo1.jpg')
     background-attachment fixed
     height 100%
-    width auto
+    width 100%
     position relative
 
     #menu1
@@ -132,11 +137,12 @@ h2
                 height 10em
                 text-align center
                 
-                .usuario 
-                    text-align left
+                .usuario
+                    width 60%  
                     margin 2em auto
-                    p
-                    margin 0 
+                    text-align left
+                    .usu
+                        margin-button 2em
                 .buttons
                     margin-top 2em 
                     a
@@ -196,7 +202,7 @@ h2
         height auto
         text-align center
         padding-bottom 1em
-        width auto 
+        width 100% 
         overflow hiden
         margin 8em 0
         height auto  
@@ -287,3 +293,22 @@ h2
                 color white
                 &:hover
                     color amarillo_pag
+
+
+
+@media screen and (min-width:768px)
+
+    body
+        font-size 22px
+    .container 
+        .seccionProcess 
+            text-align center
+            .process
+                width 70%
+                .image
+                    margin 0
+                    padding 0
+                    img
+                        width 500px
+                        height 333px
+
