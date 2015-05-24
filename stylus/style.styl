@@ -36,10 +36,7 @@ h2
     width 100%
     font-weight 400
     margin 0
-    color white
-
-.title
-    color black 
+    color white 
 
 //buttons
 .button_procesos
@@ -64,6 +61,10 @@ h2
 
 //OOCSS
 
+.absolute
+    position absolute
+.relative
+    position relative
 .left
     float left
 .white
@@ -122,32 +123,58 @@ h2
             pointer-events auto  
         
         .modalbox
-            width 300px
-            position relative
-            padding 5px 20px 13px 20px
+            width 19em
+            height 15em 
             background #fff
             border-radius 3px
             transition all 500ms ease-in
 
             .title
-                color black
+                width 100%
+                margin 0
+                padding .2em 0
+                background rgba(0,0,0,0.7)
                 font-size 1.5em
             
             form 
                 height 10em
                 text-align center
-                
                 .usuario
                     width 60%  
-                    margin 2em auto
-                    text-align left
-                    .usu
-                        margin-button 2em
+                    margin 1em auto
+                    text-align left                    
+                    &:nth-child(1)
+                        margin-button 1em 
+                    input 
+                        border-radius 4px
+                        height 1.5em
+                        &.usu
+                            margin-button 1em 
+                    .label
+                        font-family 'Varela Round'                       
                 .buttons
-                    margin-top 2em 
-                    a
+                    margin-top 2em
+                    .recuperar
+                        bottom 4em
+                        right 4.3em  
+                    .ingresar 
+                        position absolute
+                        bottom 0
+                        right 0
+                        margin 0 1em .5em 0
+                        height 1.4em
+                        width 6em 
                         text-decoration none
-                        color black 
+                        color black                       
+                    .salir
+                        position absolute
+                        bottom 0
+                        left 0
+                        margin 0 0 .5em 1em
+                        height 1.4em
+                        width 6em
+                        text-decoration none
+                        color black     
 
                 .close 
                     background #606061
@@ -293,8 +320,6 @@ h2
                 color white
                 &:hover
                     color amarillo_pag
-
-
 
 @media screen and (min-width:768px)
 
