@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Asignar Pefiles</title>
+	<link rel="stylesheet" href="css/styl.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+</head>
+<body>
+		
+	<figure>
+		<img src="images/Logo.jpg" alt="Granja Porcicola Wilbur">
+	</figure>
+
+	<form class="frmAsignarPerfil">
+		<h2>Asignar Perfiles</h2>
+
+		<div class="izquierda">
+			<p>Número Documento:</p>
+			<input type="text" name="txtNumDocumento">
+			
+			<p>*Perfil:</p>
+			<select name="cbxListPerfil" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')">
+				<option> Administrador </option>
+				<option> Jaulas </option>
+				<option> Reportes </option>
+				<option> Almacen </option>
+				<option> Veterinario </option>	
+			</select>
+			
+			<p>Contraseña:</p>
+			<input type="text" name="txtContrasena">			
+		</div>
+
+		<div class="derecha">
+			<p>Nombre:</p>
+			<input type="text" name="txtNombre">
+			
+			<p>Nombre de Usuario:</p>
+			<input type="text" name="txtNomUsuario">
+				
+			<p>Confirmar Contraseña:</p>
+			<input type="text" name="txtConfContrasena">
+		</div>
+
+		<div class="botones">
+			<div href="#" class="boton">Nuevo</div>
+			<div href="#" class="boton">Guardar</div>
+			<div href="#" class="boton">Buscar</div>
+			<div href="#" class="boton">Editar</div>
+			<div href="#" class="boton">Eliminar</div>
+			<div href="#" class="boton">Listar</div>
+			<div href="#" class="boton">Limpiar</div>
+			<div href="#" class="boton">Volver</div>
+		</div>
+	</form>
+
+	<form class="frmPartos">
+		<h2>Partos</h2>
+		
+		<div class="izquierda">
+			<p>*Código del Parto:</p>
+			<input type="text" name="txtCodParto">
+		</div>
+
+		<div class="derecha">
+			<p>*Fecha del Parto:</p>
+			<input type="date" name="txtFehcaParto">
+		</div>
+		
+		<p class="subtitulos"><strong>Identificación de la Madre</strong></p>
+		
+		<div class="izquierda">
+			<p>*Código de la Madre</p>
+			<input type="text" name="txtCodMadre">
+
+			<p>Edad en Semanas</p>
+			
+			<input type="text" name="txtEdad">		
+		</div>
+
+		<div class="derecha">
+			<p>Raza Madre</p>
+			<select name="cbxListRaza" onChange="combo(this, 'razaAnim')" onMouseOut="comboInit(this, 'razaAnim')">
+				<option> Hampshire </option>
+				<option> Duroc </option>
+				<option> Pietrain </option>
+				<option> Landrace </option>
+				<option> Yorkshire (Large White) </option>	
+			</select>
+			
+			<p>Raza Padre</p>
+			<select name="cbxListRaza" onChange="combo(this, 'razaAnim')" onMouseOut="comboInit(this, 'razaAnim')">
+				<option> Hampshire </option>
+				<option> Duroc </option>
+				<option> Pietrain </option>
+				<option> Landrace </option>
+				<option> Yorkshire (Large White) </option>	
+			</select>
+		</div>
+
+		
+		<p class="subtitulos"><strong>Lechones</strong></p>
+
+		<div class="izquierda">
+			<p>*Número de Vivos</p>
+			<input type="text" name="txtNumVivos">
+		</div>
+		
+		<div class="derecha">
+			<p>*Número Muertos</p>
+			<input type="text" name="txtNumMuertos">
+		</div>
+
+		<p>Total Camada</p>
+		<input type="text" name="txtTotalCamada">			
+		
+		<p>
+		<div class="botones">
+			<div href="#" class="boton">Nuevo</div>
+			<div href="#" class="boton">Guardar</div>
+			<div href="#" class="boton">Buscar</div>
+			<div href="#" class="boton">Editar</div>
+			<div href="#" class="boton">Eliminar</div>
+			<div href="#" class="boton">Listar</div>
+			<div href="#" class="boton">Limpiar</div>
+			<div href="#" class="boton">Volver</div>
+		</div>
+		</p>
+	</form>
+
+
+
+</body>
+</html>
