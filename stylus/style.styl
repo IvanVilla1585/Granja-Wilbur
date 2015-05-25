@@ -1,5 +1,7 @@
 @import "normalize.styl"
 @import "fonts.styl"
+@import "slider.styl"
+@import "stylsmodals"
 
 negro = #1C1C1C
 rojo_claro = #BE1F12
@@ -50,17 +52,40 @@ h2
     cursor pointer
     border-style solid 
     border-color rojo2
-    border-width 0px 0px 5px
+    border-width 0px 0px 5px 
     padding-top 8px
     transition 1s 
     &:active
         width 6.3em
         height 1.3em
         font-size 14px
+.buttons_links
+    color white
+    padding 0.4em 1.2em
+    margin-button 2em
 
-
+.button_registro
+    margin 0 auto
+    background rojo_pag
+    width 100px
+    height 30px
+    font-family "Varela Round"
+    font-size 1.3em
+    padding 0 1em
+    border-radius 4px
+    cursor pointer
+    border-style solid 
+    border-color rojo2
+    border-width 0px 0px 5px
+    a 
+        font-size 1.3em
+        color white
+        text-decoration none
+        margin-left 0.2em
 //OOCSS
 
+.borders
+    border 3px solid amarillo_pag 
 .absolute
     position absolute
 .relative
@@ -81,128 +106,29 @@ h2
     background red
 .margin-top
     margin-top 2em !important
-
-
 .label
     margin 0 
-
 .contacto
   color white
-  text-decoration none
-  
+  text-decoration none  
 .button_registro
     display none
-
+.position
+    position absolute 
+    top 0
+    right 0.5em
+    font-size 1.8em 
 .container
     background-image url('../images/Fondo1.jpg')
     background-attachment fixed
     height 100%
     width 100%
     position relative
-
     #menu1
         display inline-block
         font-size 2em
         color white
-        text-decoration none
-
-    .modalmask 
-        position fixed
-        font-family Arial, sans-serif
-        top 0
-        right 0
-        bottom 0
-        left 0
-        background rgba(0,0,0,0.8)
-        z-index 99999
-        opacity 0
-        transition opacity 400ms ease-in 
-        pointer-events none
-        &:target 
-            opacity 1
-            pointer-events auto  
-        
-        .modalbox
-            width 19em
-            height 15em 
-            background #fff
-            border-radius 3px
-            transition all 500ms ease-in
-
-            .title
-                width 100%
-                margin 0
-                padding .2em 0
-                background rgba(0,0,0,0.7)
-                font-size 1.5em
-            
-            form 
-                height 10em
-                text-align center
-                .usuario
-                    width 60%  
-                    margin 1em auto
-                    text-align left                    
-                    &:nth-child(1)
-                        margin-button 1em 
-                    input 
-                        border-radius 4px
-                        height 1.5em
-                        &.usu
-                            margin-button 1em 
-                    .label
-                        font-family 'Varela Round'                       
-                .buttons
-                    margin-top 2em
-                    .recuperar
-                        bottom 4em
-                        right 4.3em  
-                    .ingresar 
-                        position absolute
-                        bottom 0
-                        right 0
-                        margin 0 1em .5em 0
-                        height 1.4em
-                        width 6em 
-                        text-decoration none
-                        color black                       
-                    .salir
-                        position absolute
-                        bottom 0
-                        left 0
-                        margin 0 0 .5em 1em
-                        height 1.4em
-                        width 6em
-                        text-decoration none
-                        color black     
-
-                .close 
-                    background #606061
-                    color #FFFFFF
-                    line-height 25px
-                    position absolute
-                    right 1px
-                    text-align center
-                    top 1px
-                    width 24px
-                    text-decoration none
-                    font-weight bold
-                    border-radius 3px
-                    &:hover  
-                        color #222
-  
-        .movedown 
-            margin 0 auto
-     
-    .modalmask:target .movedown       
-        margin 10% auto
-      
-    .position
-        position absolute 
-        top 0
-        right 0.5em
-        font-size 1.8em
-        color red 
+        text-decoration none      
 
     .sponsors
         margin-top .5em
@@ -224,7 +150,6 @@ h2
                     cursor pointer
                     transform rotate(360deg)
                     transition transform .3s ease-in-out  
-    
     .seccion
         height auto
         text-align center
@@ -239,7 +164,6 @@ h2
             font-family Varela Round
             margin 1em 2em
             font-size 0.8em 
-
     .seccionProcess
         padding 0
         margin 8em 0
@@ -256,7 +180,7 @@ h2
             background white
             display inline-block
             text-align center
-            padding 0 0 1em 0
+            padding-bottom 1.5em
             margin 0 2em 2em 2em 
             border-top 3px solid rojo_pag  
             .name
@@ -272,8 +196,7 @@ h2
                 padding 0 
                 img
                     width 270px
-                    height 194px  
-
+                    height 194px 
     .seccion
         .input
             text-align center
@@ -337,3 +260,28 @@ h2
                         width 500px
                         height 333px
 
+@media screen and (min-width:1024px)
+    
+    body
+        font-size 18px
+    h1
+        font-size 3em
+    h2
+        font-size 2em
+    .container 
+        #menu1
+            display none  
+        .button_registro
+            display inline-block 
+        .position
+            font-size 1.4em
+            background rojo2
+            color white
+            top .4em 
+        .seccionProcess
+            .process
+                width 19em
+                .image
+                    img 
+                        width 330px;
+                        height 235px;

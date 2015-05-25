@@ -1,46 +1,131 @@
-.container  
-    .modalmask 
-        position fixed
-        font-family Arial, sans-serif
-        top 0
-        right 0
-        bottom 0
-        left 0
-        background rgba(0,0,0,0.8)
-        z-index 99999
-        opacity 0
-        transition opacity 400ms ease-in 
-        pointer-events none
-	    &:target 
-            opacity 1
-            pointer-events auto
-        .modalbox
-            width 400px
-            position relative
-            padding 5px 20px 13px 20px
-            background #fff
-            border-radius 3px
-            transition all 500ms ease-in 
-            form
-                height 10em
- 
-       	.movedown 
-            margin 0 auto
-	 
-    .modalmask:target .movedown       
-        margin 10% auto
-  
-        .close 
-            background #606061
-            color #FFFFFF
-            line-height 25px
-            position absolute
-            right 1px
+.modalmask 
+    position fixed
+    font-family Arial, sans-serif
+    top 0
+    right 0
+    bottom 0
+    left 0
+    background rgba(0,0,0,0.8)
+    z-index 99999
+    opacity 0
+    transition opacity 400ms ease-in 
+    pointer-events none
+    &:target 
+        opacity 1
+        pointer-events auto  
+    
+    .modalbox
+        width 19em
+        height 15em 
+        background #fff
+        border-radius 3px
+        transition all 500ms ease-in
+
+        .title
+            width 100%
+            margin 0
+            padding .2em 0
+            background rgba(0,0,0,0.7)
+            font-size 1.5em
+        
+        form 
+            height 10em
             text-align center
-            top 1px
-            width 24px
-            text-decoration none
-            font-weight bold
-            border-radius 3px
-            &:hover  
-   	           color #222
+            .usuario
+                width 60%  
+                margin 1em auto
+                text-align left                    
+                &:nth-child(1)
+                    margin-button 1em 
+                input 
+                    border-radius 4px
+                    height 1.5em
+                    &.usu
+                        margin-button 1em 
+                .label
+                    font-family 'Varela Round'                       
+            .buttons
+                margin-top 2em
+                .recuperar
+                    bottom 4em
+                    right 4.3em  
+                .ingresar 
+                    position absolute
+                    bottom 0
+                    right 0
+                    margin 0 1em .5em 0
+                    height 1.4em
+                    width 6em 
+                    text-decoration none
+                    color black                       
+                .salir
+                    position absolute
+                    bottom 0
+                    left 0
+                    margin 0 0 .5em 1em
+                    height 1.4em
+                    width 6em
+                    text-decoration none
+                    color black     
+
+            .close 
+                background #606061
+                color #FFFFFF
+                line-height 25px
+                position absolute
+                right 1px
+                text-align center
+                top 1px
+                width 24px
+                text-decoration none
+                font-weight bold
+                border-radius 3px
+                &:hover  
+                    color #222
+
+    .movedown 
+        margin 0 auto
+ 
+.modalmask:target .movedown       
+    margin 10% auto
+
+.modalmask_process 
+    position fixed
+    font-family Arial, sans-serif
+    top 0
+    right 0
+    bottom 0
+    left 0
+    background rgba(0,0,0,0.8)
+    z-index 99999
+    opacity 0
+    transition opacity 400ms ease-in 
+    pointer-events none
+    margin-button 1em
+    &:target 
+        opacity 1
+        pointer-events auto  
+
+    .modalbox_process
+        width 19em
+        height auto
+        background #fff
+        border-radius 3px
+        overflow hiden
+        overflow-y scroll
+        padding-bottom 1em
+        box-shadow 1px 1px 5px rgba(0,0,0,0.4)                transition all 500ms ease-in
+    .movedown 
+        margin 2em auto
+    .title_process
+        font-size 1.5em
+        background black
+        background rgba(0,0,0,0.7)
+        margin-button 1em
+
+@media screen and (min-width:1024px)
+    .modalmask_process
+        .mo_process
+            width 25em
+            .title_process
+                font-size 1.8em
