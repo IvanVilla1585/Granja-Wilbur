@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
-    Created on : 7/07/2015, 08:19:43 PM
-    Author     : ivan
+    Created on : 9/07/2015, 01:41:37 PM
+    Author     : Juan
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello World</h1>
     </body>
 </html>
