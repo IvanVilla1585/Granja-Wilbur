@@ -13,7 +13,7 @@
 	<section class="container">
 		<header>
 			<h1>Porcícola Wilbur</h1>
-			<div class="button_registro icon-icon-user position">Ingresar</div>
+			<a href="#modal1" class="button_registro icon-icon-user-d position">Ingresar</a>
 			<a href="#modal1" class="icon-icon-user position" id="menu1" ></a>
 			<div id="modal1" class="modalmask">
    			 	<div class="modalbox movedown relative">    
@@ -56,30 +56,46 @@
 			<div class="redBackground">
 				<h2>Nuestros Procesos</h2>
 			</div>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta et molestiae iste, quis omnis voluptatem facere atque, aliquam voluptate natus inventore possimus commodi, impedit fuga sapiente consequuntur quo, sequi consequatur.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta et molestiae iste, quis omnis voluptatem facere atque, aliquam voluptate natus inventore possimus commodi, impedit fuga sapiente consequuntur quo, sequi consequatur.</p>			
+			<div id="modalprocess" class="modalmask_process">
+   			 	<div class="modalbox_process mo_process movedown relative" id="model_process">    
+   			 		<h2 class="title title_process" id="titulo"></h2>
+					<ul class="rslides">
+  						<li><img src="" id="imagen1" alt=""></li>
+  						<li><img src="" id="imagen2" alt=""></li>
+  						<li><img src="" id="imagen3" alt=""></li>
+  						<li><img src="" id="imagen4" alt=""></li>
+					</ul>
+					<p id="parrafo1">			
+					</p>
+					<p id="parrafo2">			
+					</p>
+					<a href="" class="button_procesos buttons_links">Volver</a>
+   			 	</div>
+   			</div>
 			<article class="process">
 				<figure class="image">
 					<img src="images/reproductor.jpg" alt="Crianza de lechones en la granja porcicola wilbur.">
 				</figure>
 				<p class="name">Control Reproductores</p>
 				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
-				<div class="button_procesos">Ver Más</div>
+				<a href="#modalprocess" class="button_procesos buttons_links" id="button_reproduc">Ver Más..</a>
 			</article>
 			<article class="process">
 				<figure class="image">
-					<img src="images/reprodu.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+					<img src="images/reprodu.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders" class="borders">
 				</figure>
 				<p class="name">Control a los Partos</p>
 				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
-				<div class="button_procesos">Ver Más</div>
+				<a href="#modalprocess" class="button_procesos buttons_links" id="button_partos">Ver Más..</a>
 			</article>
 			<article class="process">
 				<figure class="image">
-					<img src="images/jaulas.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+					<img src="images/jaulas.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders" class="borders">
 				</figure>
 				<p class="name">Etapas de Desarrollo</p>
 				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
-				<div class="button_procesos">Ver Mas</div>
+				<a href="#modalprocess" class="button_procesos buttons_links" id="button_etapa">Ver Más..</a>
 			</article>
 			<article class="process">
 				<figure class="image">
@@ -87,23 +103,23 @@
 				</figure>
 				<p class="name">Control Reproductores</p>
 				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
-				<div class="button_procesos">Ver Más</div>
+				<a href="#modalprocess" class="button_procesos buttons_links">Ver Más..</a>
 			</article>
 			<article class="process">
 				<figure class="image">
-					<img src="images/reprodu.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+					<img src="images/reprodu.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders" class="borders">
 				</figure>
 				<p class="name">Control a los Partos</p>
 				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
-				<div class="button_procesos">Ver Más</div>
+				<a href="#modalprocess" class="button_procesos buttons_links">Ver Más..</a>
 			</article>
 			<article class="process">
 				<figure class="image">
-					<img src="images/jaulas.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders">
+					<img src="images/jaulas.jpg" alt="Crianza de lechones en la granja porcicola wilbur." class="borders" class="borders">
 				</figure>
 				<p class="name">Etapas de Desarrollo</p>
 				<p class="descripcion">Llevamos un control estricto y adecuado con todos los animales reproductores de la granja...</p>
-				<div class="button_procesos">Ver Mas</div>
+				<a href="#modalprocess" class="button_procesos buttons_links">Ver Más..</a>
 			</article>
 		</div>
 		<div class="seccion contact">
@@ -134,5 +150,12 @@
 			</aside>
 		</footer> 
 	</section>
+	<script src="js/mostrar.js"></script>	
+	<script src="js/vendors/responsiveslides.min.js"></script>
+	<script>
+  		$(function() {
+    		$(".rslides").responsiveSlides();
+  		});
+	</script>
 </body>
 </html>
