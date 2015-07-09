@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Asignar Perfil</title>
+	<link rel="stylesheet" href="../css/styl.css">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>		
+		<h1>Asignar Perfiles</h2>
+		<figure>
+			<img src="../images/Logo.jpg" alt="Granja Porcicola Wilbur">
+		</figure>
+	</header>
+	<section>
+		<form action="" class="frmAsignarPerfil">
+			<div class="inputs">
+				<input type="text" name="txtNumDocumento" placeholder="Número de Documento" id="txtNumDocumento">
+				<input type="text" name="txtNombre" placeholder="Nombre" id="txtNombre">
+				<select name="cbxListPerfil" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxListPerfil">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<input type="text" name="txtNomUsuario" placeholder="Nombre de Usuario" id="txtNomUsuario">
+				<input type="text" name="txtContrasena" placeholder="Contraseña" id="txtContrasena">
+				<input type="text" name="txtConfContrasena" placeholder="Repetir Contraseña" id="txtConfContrasena">
+			</div>
+		</form>
+		<div class="botones"> 
+			<input type="submit" href="#" class="boton">Guardar>
+			<input type="submit" href="#" class="boton">Buscar>
+			<input type="submit" href="#" class="boton">Editar>
+			<input type="submit" href="#" class="boton">Eliminar> 
+		</div>
+		<div class="dere"> 
+			<input type="submit" href="#" class="boton">Nuevo>
+			<input type="submit" href="#" class="boton">Listar
+			<input type="submit" href="#" class="boton">Limpiar>
+			<input type="submit" href="#" class="boton">Volver>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,12 +1,12 @@
-
+@import "normalize.styl"
 rojo_pag = #FF1D0D
 amarillo_pag = #F5FF0D
-rojo2 = #BE1F12
+rojo2 = #BE1F12 
+gris_mas_claro = #F0F0F0
 
 body
 	font-size 16px
-	/*background-image url('../images/Fondo1.jpg')
-	background-attachment fixed]*/
+	background gris_mas_claro
 		
 figure
 	position absolute
@@ -18,160 +18,86 @@ figure
 	img		
 		width 170px
 		height 151px
-		border-radius 50%
+		border-radius 100%
 		border 8px amarillo_pag solid
+header
+	color white
+	text-align center 
+	background black
+	line-height 10em
 
-div 
-	display inline-block
-	margin 0
+input
+	border-radius 3px
+	border 1px black solid
+	height 3em
+	width 18em
+	margin-bottom 1em 
+	padding-left 2em
+
+section	
+	background white
+	padding-top 4em
+	
+select
+	border-radius 3px
+	border 1px black solid
+	height 3em
+	width 20em
+	padding-left 2em
+	margin-bottom 1em
+	font-family 'Varela Round'
+
+h1
+		font-family 'Lobster'
+		font-size 3em
+		text-align center
+		background rgb(38,38,38)
+		color white
+		margin 0
 
 .frmAsignarPerfil
-	position relative
-	margin-top 5em
-	height 22em
-	text-align center
-	border 5px rojo2 solid
-	padding-top 1em
+	position relative 
+	height 17em
+	text-align center 
 	
-	h2
-		font-family 'Lobster'
-		font-size 3em
-		text-align center
-		background rgb(38,38,38)
-		color white
-		margin 0
-		
-	input
-		border-radius 3px
-		border 1px black solid
-		height 2em
-		margin-bottom 1em
-		
-	p
-		margin 0
-		padding 0
-		font-family 'Varela Round'
-		
 	
-	.izquierda		
-		margin-top 1em
-		text-align left
-		margin-right 5em
 		
-	.derecha
-		text-align left
-		margin-left 5em
+	.inputs
+		display flex
+		flex-flow row wrap
+		flex-wrap wrap
+		justify-content space-around 
+		width 50em
+		margin 1em auto 
+		
 			
-	select
-		border-radius 3px
-		border 1px black solid
-		height 2.3em
-		width 13em
-		margin-bottom 1em
-		font-family 'Varela Round'
-	
-	.botones
-		width 100%
-		position absolute
-		bottom 0
-		left 0em
-		margin-bottom 1em	
+.botones 
+	position absolute
+	top 14em
+	left 5em
+	margin-bottom 1em
+.dere
+	position absolute
+	right 5em
+	top 14em	 
 		
-		.boton
-			padding .5em 1em
-			margin-left 1em
-			background rojo_pag
-			width 6em
-			cursor pointer
-			border-radius 4px
-			border-bottom 5px rojo2 solid
-			transition .2s
-			font-family 'Varela Round'
-			&:active
-				width 5.5em
-				height 1em
-				font-size 14px
+.boton
+	padding .5em 1em 
+	background rojo_pag
+	width 6em
+	cursor pointer
+	border-radius 4px
+	border-bottom 5px rojo2 solid
+	transition .2s
+	margin 1em
+	font-family 'Varela Round'
 
-.frmPartos
-	position relative
-	margin-top 5em
-	height 38em
-	text-align center
-	border 5px rojo2 solid
-	padding-top 1em
-	
-	h2
-		font-family 'Lobster'
-		font-size 3em
-		text-align center
-		background rgb(38,38,38)
-		color white
-		margin 0
-		
-	div
-		text-align center
-		margin-top 1em
-		
-	input
-		border-radius 3px
-		border 1px black solid
-		height 2em
-		margin-bottom 1em
-		margin-right 1.5em
-		
-	.subtitulos
-		margin-top 1em
-		font-family 'Varela Round'
-		font-size 1.5em
+	&:active
+		width 5.5em
+		height 1em
+		font-size 14px
 
-	p
-		margin 0
-		padding 0
-		font-family 'Varela Round'
-	
-	label
-		padding 0
-		margin 0
-		font-family 'Varela Round'	
-	
-	.izquierda
-		margin-top 1em
-		text-align left
-		margin-right 5em
-		
-	.derecha
-		text-align left
-		margin-left 5em
-			
-	select
-		border-radius 3px
-		border 1px black solid
-		height 2.3em
-		width 13em
-		margin-bottom 1em
-		font-family 'Varela Round'
-	
-	.botones
-		width 100%
-		position absolute
-		bottom 0
-		left 0em
-		margin-bottom 1em
-		
-		.boton
-			padding .5em 1em
-			margin-left 1em
-			background rojo_pag
-			width 6em
-			cursor pointer
-			border-radius 4px
-			border-bottom 5px rojo2 solid
-			transition .2s
-			font-family 'Varela Round'			
-			&:active
-				width 5.5em
-				height 1em
-				font-size 14px
+
 	
 		
 
