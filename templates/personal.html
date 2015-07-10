@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrar Personal</title>
+	<link rel="stylesheet" href="../css/styl.css">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header>		
+		<h1>Registro Personal</h2>
+		<figure>
+			<img src="../images/Logo.jpg" alt="Granja Porcicola Wilbur">
+		</figure>
+	</header>	
+	<section class="secperso">
+		<form action="" class="frmpersonal">
+			<p class="titulo">Datos Personales</p>
+			<div class="inputs_registro">
+				<input type="text" name="txtdocumento" id="txtdocumento" placeholder="Número de Documento">
+				<select name="cbxtipodoc" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxtipodoc">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<input type="text" name="txtnombre" id="txtnombre" placeholder="Nombres">
+				<input type="text" name="txtapellidos" id="txtapellidos" placeholder="Apellidos">
+				<input type="date" name="fechanaci" id="fechanaci" placeholder="Fecha Nacimiento">
+				<select name="cbxdeparta" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxdeparta">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<select name="cbxmunici" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxmunici">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<select name="cbxtiposan" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxtiposan">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<select name="cbxrh" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxrh">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<select name="cbxprofesion" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxprofesion">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<p class="radioboton"><label>
+            <input type="radio" name="numero" value="3"> 4
+        </label>
+					<label for=""><input type="radio"  class="radio" name="group1" value="Activo">Activo</label>
+					<label for=""><input type="radio" class="radio"  name="group1" value="Inactivo">Inactivo</label>
+				</p>
+				<input type="date" name="fechatitulo" id="fechatitulo" placeholder="Fecha Titulo">
+			</div>
+			<p class="titulo">Datos Residencia</p>
+			<div class="inputs_registro">
+				<input type="text" name="txtdireccion" id="txtdireccion" placeholder="Dirección Residencia">
+				<input type="text" name="txttelefono" id="txttelefono" placeholder="Teléfono Fíjo">
+				<input type="text" name="txtmovil" id="txtmovil" placeholder="Teléfono Móvil">
+				<input type="email" name="txtmail" id="txtmail" placeholder="Correo Electronico">
+			</div>
+			<p class="titulo">Datos Laborales</p>
+			<div class="inputs_registro">
+				<select name="cbxcontrato" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxcontrato">
+					<option> Administrador </option>
+					<option> Jaulas </option>
+					<option> Reportes </option>
+					<option> Almacen </option>
+					<option> Veterinario </option>	
+				</select>
+				<input type="date" name="fechacontrato" id="fechacontrato" placeholder="Fecha Contrato">
+				<input type="text" name="txtcargo" id="txtcargo" placeholder="Cargo">
+			</div>
+			<div class="botones"> 
+                <input type="submit" id="guardar" name="guardar" class="boton" value="Guardar">
+                <input type="submit" id="buscar" name="buscar" class="boton" value="Buscar">
+                <input type="submit" id="editar" name="editar" class="boton" value="Editar">
+                <input type="submit" id="eliminar" name="eliminar" class="boton" value="Eliminar">
+            </div>
+            <div class="dere"> 
+                <div type="submit" id="nuevo" name="nuevo" class="boton" value="Nuevo">Nuevo</div>
+                <input type="submit" id="listar" name="listar" class="boton" value="Listar">
+                <input type="submit" id="limpiar" name="limpiar" class="boton" value="Limpiar">
+                <input type="submit" id="volver" name="volver" class="boton" value="Volver">
+            </div>
+		</form>
+	</section>
+</body>
+</html>

@@ -1,5 +1,5 @@
 CREATE TABLESPACE wilbur LOGGING
-DATAFILE 'C:\Users\Juan\Documents\Bases de Datos I\WilburWeb\wilbur.dbf' size 1024M
+DATAFILE '/home/ivan/WilburWeb/wilbur.dbf' size 1024M
 extent management local segment space management auto; 
 
 create user jeag profile default 

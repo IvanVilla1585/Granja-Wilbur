@@ -3,10 +3,12 @@ rojo_pag = #FF1D0D
 amarillo_pag = #F5FF0D
 rojo2 = #BE1F12 
 gris_mas_claro = #F0F0F0
+girs_oscuro = #333333
 
 body
 	font-size 16px
 	background gris_mas_claro
+	height auto
 		
 figure
 	position absolute
@@ -37,6 +39,7 @@ input
 section	
 	background white
 	padding-top 4em
+	height 53em
 	
 select
 	border-radius 3px
@@ -55,9 +58,13 @@ h1
 		color white
 		margin 0
 
+.secpersonal
+	height 100%
+	background white
+
 .frmAsignarPerfil
 	position relative 
-	height 17em
+	height 53em
 	text-align center 
 	
 	
@@ -85,17 +92,66 @@ h1
 	padding .5em 1em 
 	background rojo_pag
 	width 6em
+	display block
 	cursor pointer
 	border-radius 4px
 	border-bottom 5px rojo2 solid
 	transition .2s
 	margin 1em
 	font-family 'Varela Round'
-
 	&:active
 		width 5.5em
 		height 1em
 		font-size 14px
+.radioboton
+	color black
+	width 20em
+	display inline-block
+
+.radio
+	display inline-block
+.secperso
+	padding-top 0
+	margin-top 2em
+
+.frmpersonal
+	position relative 
+	height auto
+	text-align center 
+
+	.inputs_registro
+		display flex
+		flex-flow row wrap
+		flex-wrap wrap
+		justify-content space-around 
+		width 50em
+		margin 1em auto 
+	.titulo
+		text-align center
+		font-size 1.2em
+
+
+
+
+.menu
+	display block
+	background gris_mas_claro
+	overflow hidden
+	border-top 1px solid gris_claro
+	border-top 1px solid gris_claro
+	.item
+		float left
+		display inline-block
+		a
+			text-decoration none
+			padding 1em
+			display block
+			border-top 5px solid transparent
+			transition .3s border-top
+			text-transform uppercase
+			color girs_oscuro
+			&:hover
+				border-top 5px solid girs_oscuro
 
 
 	
