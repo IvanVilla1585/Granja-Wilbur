@@ -18,8 +18,8 @@
                         perfil = jQuery.trim(data);
                         if(perfil == "1"){
                             document.location.href = "MenuAdmin.jsp";
-                        }else if(perfil == "2"){
-                            document.location.href = "MenuEmpl.jsp";
+                        }else if(perfil > "1"){
+                            document.location.href = "MenuEmpleado.jsp";
                         }else{
                             alert("Usuario no valido.");
                         }                    

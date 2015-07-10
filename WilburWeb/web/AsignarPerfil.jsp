@@ -32,13 +32,11 @@
             boolean limpiar = false;
             boolean volver = false;
             
-            if(request.getParameter("nuevo") != null)
-            {
+            if(request.getParameter("nuevo") != null){
                 nuevo = true;
             }
             
-            if(request.getParameter("guardar") != null)
-            {
+            if(request.getParameter("guardar") != null){
                 guardar = true;
             }
             
@@ -67,52 +65,45 @@
             }
             
             //Obtenemos el valor como fue llamado el formulario.
-            String cbxTipoDoc = "0";
+            String cbxTipoDoc = "";
             String txtNumDocumento = "";
             String txtNombre = "";
-            String cbxListPerfil = "0";
+            String cbxListPerfil = "";
             String txtNomUsuario = "";
             String txtContrasena = "";
             String txtConfContrasena = "";
                         
-            if(request.getParameter("cbxTipoDoc") != null)
-            {
+            if(request.getParameter("cbxTipoDoc") != null){
                 cbxTipoDoc = request.getParameter("cbxTipoDoc");
             }
             
-            if(request.getParameter("txtNumDocumento") != null)
-            {
+            if(request.getParameter("txtNumDocumento") != null){
                 txtNumDocumento = request.getParameter("txtNumDocumento");
             }
             
-            if(request.getParameter("txtNombre") != null)
-            {
+            if(request.getParameter("txtNombre") != null){
                 txtNombre = request.getParameter("txtNombre");
             }
             
-            if(request.getParameter("cbxListPerfil") != null)
-            {
+            if(request.getParameter("cbxListPerfil") != null){
                 cbxListPerfil = request.getParameter("cbxListPerfil");
             }
             
-            if(request.getParameter("txtNomUsuario") != null)
-            {
+            if(request.getParameter("txtNomUsuario") != null){
                 txtNomUsuario = request.getParameter("txtNomUsuario");
             }
             
-            if(request.getParameter("txtContrasena") != null)
-            {
+            if(request.getParameter("txtContrasena") != null){
                 txtContrasena = request.getParameter("txtContrasena");
             }
             
-            if(request.getParameter("txtConfContrasena") != null)
-            {
+            if(request.getParameter("txtConfContrasena") != null){
                 txtConfContrasena = request.getParameter("txtConfContrasena");
             }
             
-            //Si presiona el boton consultar.
+            //Si presiona el boton buscar.
             if(buscar){
-                if(cbxTipoDoc.equals("...") && txtNumDocumento.equals("")){
+                if(cbxTipoDoc.equals("0") && txtNumDocumento.equals("")){
                     mensaje = "Debe ingresar el número de documento y seleccionar el tipo de documento.";
                 }else{
                     Conexion con;
@@ -133,6 +124,81 @@
                         txtConfContrasena = "";
                         mensaje = "Usuario Consultado...";
                     }
+                   con.cerrarConexion();
+                }
+            }
+            
+            //Si presiona el boton limpiar.
+            if(limpiar){
+                cbxTipoDoc = "";
+                txtNumDocumento = "";
+                txtNombre = "";
+                cbxListPerfil = "";
+                txtNomUsuario = "";
+                txtContrasena = "";
+                txtConfContrasena = "";
+            }
+            
+            //Si presiona boton nuevo.
+            if(nuevo){
+                
+            }
+            
+            if(guardar){
+                if(cbxTipoDoc.equals("0")){
+                    mensaje= "Debe seleccionar el tipo de documento.";
+                }
+                else if(txtNumDocumento.equals("")){
+                    mensaje= "Debe ingresar el número de identificación.";
+                }else if(cbxListPerfil.equals("0")){
+                    mensaje= "Debe seleccionar el tipo de perfil.";
+                }else if(txtNomUsuario.equals("")){
+                    mensaje= "Debe ingresar el nombre de usuario.";
+                }else if(txtContrasena.equals("")){
+                    mensaje= "Debe ingresar la contraseña.";
+                }else if(txtConfContrasena.equals("")){
+                    mensaje= "Debe confirmar la contraseña.";
+                }else if(!txtContrasena.equals(txtConfContrasena)){
+                    mensaje = "La confirmación de contraseña no es igual a la contraseña.";
+                }else{
+                    
+                    Conexion con;
+                    con = new Conexion();
+                    
+                    AsignarPerfil usuario, nuevoUsuario;
+                    RegistroUsuario verifUsuario;
+                    usuario = con.obtenerUsuarioPerf(new Integer(txtNumDocumento), new Integer(cbxTipoDoc));
+                    verifUsuario = con.obtenerUsuario(new Integer(txtNumDocumento), new Integer(cbxTipoDoc));
+                    
+                    if(usuario != null){
+                        mensaje = "Usuario ya existe.";
+                    }else if(usuario == null && verifUsuario == null){
+                        mensaje = "Usuario no existe en la Base de Datos.";
+                    }else if(con.obtenerNombreUser(txtNomUsuario)){
+                        mensaje = "El nombre de usuario " + txtNomUsuario + " ya fue asignado a otro usuario.";
+                    }else {
+                        
+                        nuevoUsuario = new AsignarPerfil(
+                                            con.codigoNuevoRegistro(),
+                                            new Integer(txtNumDocumento),
+                                            new Integer(cbxTipoDoc),
+                                            new Integer(cbxListPerfil),
+                                            txtNomUsuario,
+                                            txtContrasena);
+                        
+                        con.ingresarDatosAsignarPerfil(nuevoUsuario);
+                        
+                        con.cerrarConexion();
+                        
+                        cbxTipoDoc = "";
+                        txtNumDocumento = "";
+                        txtNombre = "";
+                        cbxListPerfil = "";
+                        txtNomUsuario = "";
+                        txtContrasena = "";
+                        txtConfContrasena = "";
+                        mensaje = "Se guardo el registro.";
+                    }
                 }
             }
        
@@ -147,33 +213,19 @@
         <form action="AsignarPerfil.jsp" class="frmAsignarPerfil" name="formAsignarPerfil" id="formAsignarPerfil">
             <div class="inputs">
                 <select name="cbxTipoDoc" onChange="combo(this, 'docUser')" onMouseOut="comboInit(this, 'docUser')" placeholder="Tipo Documento" id="cbxTipoDoc">
-                    <option value="0" <%=(cbxTipoDoc.equals("") ? "selected": "")%>>...</option>
-                    <%
-                        int i = 0;                        
-                        Conexion con = new Conexion();
-                        ResultSet tDoc = con.obtenerTipoDocumento();                        
-                        while(tDoc.next()){
-                            i++;                            
-                    %>
-                    <option value="<%=i%>" dir=""><%=tDoc.getString("NOM_TDOC")%></option>                    
-                    <%
-                        }
-                    %>
+                    <option value="0" <%=(cbxTipoDoc.equals("0") ? "selected": "")%>>...</option>
+                    <option value="1" <%=(cbxTipoDoc.equals("1") ? "selected": "")%>>CEDULA CIUDADANIA</option>             
+                    <option value="2" <%=(cbxTipoDoc.equals("2") ? "selected": "")%>>CEDULA EXTRANJERIA</option>
+                    <option value="3" <%=(cbxTipoDoc.equals("3") ? "selected": "")%>>CONTRASENA</option>
+                    <option value="4" <%=(cbxTipoDoc.equals("4") ? "selected": "")%>>PASAPORTE</option>
                 </select>
                 <input type="text" name="txtNumDocumento" placeholder="Número de Documento" id="txtNumDocumento" value="<%=txtNumDocumento%>">
                 <input type="text" name="txtNombre" placeholder="Nombres y Apellidos" id="txtNombre" value="<%=txtNombre%>">
                 <select name="cbxListPerfil" onChange="combo(this, 'perfilUser')" onMouseOut="comboInit(this, 'perfilUser')" placeholder="Perfil" id="cbxListPerfil">
-                    <option value="0" <%=(cbxListPerfil.equals("") ? "selected": "")%>>...</option>
-                    <%
-                        int j = 0;              
-                        ResultSet perfil = con.obtenerPerfiles();                        
-                        while(perfil.next()){
-                            j++;                            
-                    %>
-                    <option value="<%=j%>" <%=(cbxListPerfil != "" ? "selected": cbxListPerfil)%>><%=perfil.getString("NOM_PERFIL")%></option>                    
-                    <%
-                        }
-                    %>	
+                    <option value="0" <%=(cbxListPerfil.equals("0") ? "selected": "")%>>...</option>
+                    <option value="1" <%=(cbxListPerfil.equals("1") ? "selected": "")%>>ADMINISTRADOR</option>
+                    <option value="2" <%=(cbxListPerfil.equals("2") ? "selected": "")%>>AUXILIAR DE VETERINARIA</option>
+                    <option value="3" <%=(cbxListPerfil.equals("3") ? "selected": "")%>>VETERINARIO</option>
                 </select>
                     <input type="text" name="txtNomUsuario" placeholder="Nombre de Usuario" id="txtNomUsuario" value="<%=txtNomUsuario%>">
                     <input type="password" name="txtContrasena" placeholder="Contraseña" id="txtContrasena" value="<%=txtContrasena%>">
