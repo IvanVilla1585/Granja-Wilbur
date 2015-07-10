@@ -1,6 +1,7 @@
 package Conexion;
 
 import Utilidades.AsignarPerfil;
+import Utilidades.RegistroUsuario;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -116,30 +117,24 @@ public class Conexion {
      * contenido de los datos a insertar.
      * @see <code>Reservas</code>
      */
-    public void ingresarDatosTablaReservaciones(Reservas newReserva) {
+    public void ingresarDatosAsignarPerfil(AsignarPerfil newUser) {
         
         try {
             
             conectar();
             
-            /**
-             * Variable insertarDatos de tipo <code>PreparedStatement</code> en
-             * la cual se cargara la petición a la base de datos para insertar
-             * los datos.
-             */
             PreparedStatement insertarDatos;
 
-            insertarDatos = conexion.prepareStatement("INSERT INTO RESERVACIONES (COD_RESERV, FECHA_INI, "
-                    + "FECHA_FIN, PAQUETE, CLIENTE) VALUES(?, ?, ?, ?, ?)");
+            insertarDatos = conexion.prepareStatement("INSERT INTO ASIG_PERFIL (COD_PERF, NUM_DOC, "
+                    + "TIPO_DOC, PERFIL, NOMBRE_USER, CONTRASENA) VALUES(?, ?, ?, ?, ?, ?)");
 
-            insertarDatos.setInt(1, newReserva.getCodReserv());
-            insertarDatos.setDate(2, newReserva.getFechaIni());
-            insertarDatos.setDate(3, newReserva.getFechaFin());
-            insertarDatos.setInt(4, newReserva.getPaquete());
-            insertarDatos.setInt(5, newReserva.getCliente());
+            insertarDatos.setInt(1, newUser.getCodPerfil());
+            insertarDatos.setInt(2, newUser.getNumDoc());
+            insertarDatos.setInt(3, newUser.gettDoc());
+            insertarDatos.setInt(4, newUser.getPerf());
+            insertarDatos.setString(5, newUser.getNombreUser());
+            insertarDatos.setString(6, newUser.getPass());
             insertarDatos.executeUpdate();
-
-            conexion.close();
             
         } catch (Exception e) {
            
@@ -230,7 +225,7 @@ public class Conexion {
             //SECUENCIA EN ORACLE *CONSULTAR*
             conectar();
 
-            resultSet = statement.executeQuery("SELECT count(*) FROM RESERVACIONES");
+            resultSet = statement.executeQuery("SELECT count(*) FROM ASIG_PERFIL");
 
             if (resultSet.next()) {
                 cantFilas = resultSet.getInt("count(*)");
@@ -257,11 +252,6 @@ public class Conexion {
             conectar();
             
             usuario = null;
-
-            /*sql = ("SELECT AP.NUM_DOC, AP.NOMBRE_USER, AP.CONTRASENA, TD.NOM_TDOC, P.NOM_PERFIL, U.NOMBRES, U.APELLIDO1, "
-                    + "U.APELLIDO2 FROM ASIG_PERFIL AP INNER JOIN TIPO_DOCUMENTO TD ON AP.TIPO_DOC = TD.COD_TDOC "
-                    + "INNER JOIN PERFILES P ON AP.PERFIL = P.COD_PERF INNER JOIN USUARIOS U ON AP.NUM_DOC = U.NUM_DOC "
-                    + "AND AP.TIPO_DOC = U.TIPO_DOC  WHERE AP.NUM_DOC = " + numDoc + " AND AP.TIPO_DOC = " + tDoc);*/
             
             sql = ("SELECT AP.NUM_DOC, AP.NOMBRE_USER, AP.CONTRASENA, AP.TIPO_DOC, AP.PERFIL, U.NOMBRES, U.APELLIDO1, "
                     + "U.APELLIDO2 FROM ASIG_PERFIL AP INNER JOIN USUARIOS U ON AP.NUM_DOC = U.NUM_DOC "
@@ -281,6 +271,7 @@ public class Conexion {
                 usuario = new AsignarPerfil(
                         resultSet.getInt("NUM_DOC"),
                         resultSet.getInt("TIPO_DOC"),
+                        resultSet.getString("NOMBRE_USER"),
                         nombres,
                         resultSet.getInt("PERFIL"),
                         resultSet.getString("CONTRASENA"));
@@ -293,6 +284,78 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
             return null;
         }
+    }
+    
+    public RegistroUsuario obtenerUsuario(int numDoc, int tDoc){
+        
+        String sql;
+        RegistroUsuario usuario;
+        
+        try {            
+            conectar();
+            
+            usuario = null;
+            
+            sql = ("SELECT * FROM USUARIOS WHERE NUM_DOC = " + numDoc + " AND TIPO_DOC = " + tDoc);
+            
+            statement = conexion.createStatement();
+            resultSet = statement.executeQuery(sql);
+
+            if (resultSet.next()) {
+                
+                usuario = new RegistroUsuario(
+                        resultSet.getInt("NUM_DOC"), 
+                        resultSet.getInt("TIPO_DOC"),
+                        resultSet.getString("NOMBRES"),
+                        resultSet.getString("APELLIDO1"),
+                        resultSet.getString("APELLIDO2"),
+                        resultSet.getDate("FECHA_NAC"), 
+                        resultSet.getInt("DEPARTAMENTO"), 
+                        resultSet.getInt("CIUDAD"),
+                        resultSet.getInt("TIPO_SANGRE"), 
+                        resultSet.getInt("TIPO_RH"), 
+                        resultSet.getInt("ESTADO"), 
+                        resultSet.getString("DIRECCION"),
+                        resultSet.getInt("TELEFONO"), 
+                        resultSet.getInt("TEL_MOVIL"), 
+                        resultSet.getString("EMAIL"), 
+                        resultSet.getInt("PROFESION"), 
+                        resultSet.getDate("FECHA_OBT_TITULO"), 
+                        resultSet.getInt("CARGO"),
+                        resultSet.getDate("FECHA_CONTRATO"), 
+                        resultSet.getInt("TIPO_CONTR"));                  
+            }
+
+            return usuario;
+            
+        } catch (SQLException e) {
+            
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
+            return null;
+        }
+    }
+    
+    public boolean obtenerNombreUser(String nomUser){
+        
+        String sql;
+                
+        try {
+            conectar();
+            
+            sql = ("SELECT NOMBRE_USER FROM ASIG_PERFIL WHERE NOMBRE_USER = '" + nomUser + "'");
+
+            statement = conexion.createStatement();
+            resultSet = statement.executeQuery(sql);
+            
+            if(resultSet.next()){
+                return true;
+            }
+        } catch (SQLException e) {
+            
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, e);
+            return false;
+        }
+        return false;
     }
     
     public ResultSet obtenerTipoDocumento(){
